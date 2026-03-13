@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daysiree Maranan | Portfolio</title>
+<meta name="viewport"
+ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Daysiree Maranan | Portfolio</title>
     <style>
       * {
         margin: 0;
@@ -207,12 +208,16 @@
         max-width: 600px;
       }
 
-      .about-image-container {
-        position: relative;
-        width: 100%;
-        height: 800px;
-        overflow: visible;
-      }
+     .about-image-container {
+  position: relative;
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
 
       .frame-wrapper {
         position: relative;
@@ -221,14 +226,13 @@
         justify-content: center;
       }
 
-      .about-image-container img {
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-40%, 20%);
-        width: auto;
-        height: 600px;
-      }
+.about-image-container img {
+  width: 400px;   
+  height: auto;  
+  display: block;
+  margin: 0 auto; 
+}
+
 
       .skill-card.animate-on-scroll {
         opacity: 0;
@@ -487,6 +491,7 @@
       .img-anim {
         animation: fadeRight 1.3s ease forwards;
       }
+<<<<<<< HEAD
       /* =====================================================
    RESPONSIVE FIX — COMPLETE & CLEAN (DO NOT EDIT)
    ===================================================== */
@@ -687,6 +692,107 @@
           width: 100%;
         }
       }
+=======
+      
+      @media (max-width: 768px) {
+
+.hero {
+  flex-direction: column !important;
+  text-align: center !important;
+  padding-top: 80px !important;
+}
+
+.content h1 {
+  white-space: normal !important;
+  font-size: 32px !important;
+}
+
+.line {
+  width: 80% !important;
+  margin: 10px auto !important;
+}
+
+.role {
+  font-size: 14px !important;
+  padding: 8px 20px !important;
+  margin-top: 20px !important;
+}
+  .x-bg1,
+  .x-bg2 {
+    width: 250px !important;
+    height: 250px !important;
+    top: 15% !important;
+    opacity: 0.8 !important;
+}
+
+
+.about-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 40px 5%;
+  }
+
+
+.about-text h2 {
+  font-size: 32px !important;
+}
+
+.about-text p {
+  font-size: 16px !important;
+  max-width: 100% !important;
+  margin: 10px 0 !important;
+}
+
+  .line {
+    width: 100% !important;
+  }
+
+  .about-image-container {
+    height: auto !important;
+  }
+        
+ .about-image-container img {
+    width: 100%; 
+    height: auto;
+  }
+}
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .skill-card {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  .projects-container {
+    flex-direction: column !important;
+    gap: 40px !important;
+  }
+
+  .project-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .contact-wrapper {
+    flex-direction: column !important;
+  }
+
+  .social-icons {
+    gap: 20px !important;
+    margin-left: 0 !important;
+  }
+
+  .social-icons img,
+  .resume-icon img,
+  .linkedin-icon img {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+>>>>>>> e0b1f0301ba3785da6e99f308c8a02ac6a3a67bd
     </style>
   </head>
   <body>
