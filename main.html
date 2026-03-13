@@ -48,7 +48,7 @@
         z-index: 0;
         width: 1000px;
         height: 1500px;
-        opacity: 1;
+        opacity: 0;
         pointer-events: none;
       }
 
@@ -56,12 +56,66 @@
         top: 30%;
         left: 70%;
         transform: translate(-50%, -50%) scaleX(-1);
+        animation:
+          x1drop 1.4s ease forwards,
+          x1float 6s ease-in-out infinite;
+        animation-delay: 0s, 1.4s;
       }
 
       .x-bg2 {
         top: 30%;
         right: 70%;
-        transform: translate(50%, -50%) rotate(-0deg);
+        transform: translate(50%, -50%);
+        animation:
+          x2drop 1.4s ease forwards,
+          x2float 7s ease-in-out infinite;
+        animation-delay: 0.3s, 1.7s;
+      }
+
+      @keyframes x1drop {
+        from {
+          opacity: 0;
+          transform: translate(-50%, -120%) scaleX(-1);
+        }
+        to {
+          opacity: 1;
+          transform: translate(-50%, -50%) scaleX(-1);
+        }
+      }
+
+      @keyframes x2drop {
+        from {
+          opacity: 0;
+          transform: translate(50%, -120%);
+        }
+        to {
+          opacity: 0.6;
+          transform: translate(50%, -50%);
+        }
+      }
+
+      @keyframes x1float {
+        0% {
+          transform: translate(-50%, -50%) scaleX(-1);
+        }
+        50% {
+          transform: translate(-50%, -55%) scaleX(-1);
+        }
+        100% {
+          transform: translate(-50%, -50%) scaleX(-1);
+        }
+      }
+
+      @keyframes x2float {
+        0% {
+          transform: translate(50%, -50%);
+        }
+        50% {
+          transform: translate(50%, -55%);
+        }
+        100% {
+          transform: translate(50%, -50%);
+        }
       }
 
       .content {
@@ -69,12 +123,17 @@
         z-index: 1;
         flex: 1 1 300px;
       }
+
       .content h1 {
         color: #ff1493;
         font-size: clamp(2.5rem, 6vw, 60px);
         letter-spacing: 2px;
         font-weight: 600;
         white-space: nowrap;
+
+        opacity: 0;
+        transform: translateY(40px);
+        animation: nameSlide 1.2s ease forwards;
       }
 
       .line {
@@ -82,8 +141,12 @@
         height: 2px;
         background: #ff1493;
         margin-top: 10px;
-      }
 
+        transform: scaleX(0);
+        transform-origin: left;
+        animation: lineGrow 1s ease forwards;
+        animation-delay: 0.8s;
+      }
       .role {
         display: inline-block;
         margin-top: 40px;
@@ -94,8 +157,32 @@
         font-size: 18px;
         font-weight: bold;
         letter-spacing: 2px;
+
+        opacity: 0;
+        transform: translateY(30px);
+        animation: roleSlide 1s ease forwards;
+        animation-delay: 1.4s;
       }
 
+      @keyframes nameSlide {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes lineGrow {
+        to {
+          transform: scaleX(1);
+        }
+      }
+
+      @keyframes roleSlide {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
       .about-section {
         background: radial-gradient(circle at center, #2b001a 0%, #000000 100%);
         display: grid;
@@ -113,7 +200,7 @@
       }
 
       .about-text p {
-        font-size: clamp(1rem, 1.2vw, 1.2rem);
+        font-size: 25px;
         line-height: 1.6;
         margin-bottom: 20px;
         color: #ff1493;
@@ -121,10 +208,10 @@
       }
 
       .about-image-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        position: relative;
         width: 100%;
+        height: 800px;
+        overflow: visible;
       }
 
       .frame-wrapper {
@@ -135,11 +222,12 @@
       }
 
       .about-image-container img {
-        width: 1000%;
-        max-width: 5000px;
-        height: 500px;
-        object-fit: contain;
-        display: block;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-40%, 20%);
+        width: auto;
+        height: 600px;
       }
 
       .skill-card.animate-on-scroll {
@@ -317,10 +405,14 @@
       }
 
       .contact-item img {
-        width: 30px;
-        height: 30px;
+        width: 50px;
+        height: 40px;
       }
 
+      .contact-item span {
+        font-size: 25px;
+        color: #ff1493;
+      }
       .social-icons a {
         display: flex;
         justify-content: center;
@@ -481,15 +573,15 @@
       <div class="about-text">
         <h2>ABOUT</h2>
         <p>
-          I am Daysiree B. Maranan, a Web Developer and BSIT student at Pateros
+          I'm Daysiree B. Maranan, a Web Developer and BSIT student at Pateros
           Technological College. I focus on building functional, responsive, and
           user-centered web applications, turning complex ideas into clean and
           efficient code.
         </p>
         <p>
           I enjoy solving problems and making sure that every project I work on
-          runs smoothly. I am always eager to learn new tools and technologies
-          to improve my skills. My goal is to create digital solutions that help
+          runs smoothly. Im always eager to learn new tools and technologies to
+          improve my skills. My goal is to create digital solutions that help
           people and provide a great experience for every user.
         </p>
       </div>
@@ -571,15 +663,15 @@
           <div class="info-group">
             <h3>CONTACT</h3>
             <div class="contact-item">
-              <img src="phone-icon.png" alt="Phone" />
+              <img src="IMAGE\phone-icon.png" alt="Phone" />
               <span>09057386209</span>
             </div>
             <div class="contact-item">
-              <img src="mail-icon.png" alt="Email" />
+              <img src="IMAGE\mail-icon.png" alt="Email" />
               <span>mdaysiree@gmail.com</span>
             </div>
             <div class="contact-item">
-              <img src="loc-icon.png" alt="Location" />
+              <img src="IMAGE\loc-icon.png" alt="Location" />
               <span>Central Bicutan, Taguig City</span>
             </div>
           </div>
